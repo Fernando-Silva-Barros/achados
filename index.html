@@ -213,7 +213,7 @@ a.addEventListener('play',show);a.addEventListener('pause',show);
 
   // Formato telefone
   phoneInput.addEventListener('input',e=>{
-    let v=e.target.value.replace(/\D/g,'').slice(0,11);
+    let v=e.target.value.replace(/[^\d]/g,'').slice(0,11);
     if(v.length>2) v='('+v.slice(0,2)+') '+v.slice(2);
     if(v.length>10) v=v.slice(0,10)+'-'+v.slice(10);
     e.target.value=v;
